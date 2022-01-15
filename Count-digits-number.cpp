@@ -9,9 +9,8 @@ int main()
     cin>>num;
 
     while(num !=0){
-        val = num%10;
-        count++;
         num = num/10;
+        count++;
     }
     cout<<" No of digits in a number: "<<count<<endl;
     return 0;
