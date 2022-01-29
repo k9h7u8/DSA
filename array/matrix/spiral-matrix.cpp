@@ -1,61 +1,55 @@
 #include <iostream>
 using namespace std;
 
-int main() 
+int main()
 {
-    int r,c;
-    cout<<"Enter the value of rows and columns: "<<endl;
-    cin>>r>>c;
+    int r, c;
+    cout << "Enter the value of rows and columns: " << endl;
+    cin >> r >> c;
     int matrix[r][c];
-    cout<<"Enter the Elements of matrix: "<<endl;
+    cout << "Enter the Elements of matrix: " << endl;
     for (int i = 0; i < r; i++)
     {
-        for(int j = 0; j < c; j++)
+        for (int j = 0; j < c; j++)
         {
-            cin>>matrix[i][j];
+            cin >> matrix[i][j];
         }
     }
-    cout<<"Matrix is: "<<endl;
+    cout << "Matrix is: " << endl;
     for (int i = 0; i < r; i++)
     {
-        for(int j = 0; j < c; j++)
+        for (int j = 0; j < c; j++)
         {
-            cout<<matrix[i][j]<<" ";
+            cout << matrix[i][j] << " ";
         }
-        cout<<endl;
+        cout << endl;
     }
 
     cout << "\nSpiral Matrix : ";
-    int k = 0, l = 0;
-    while (k < r && l < c)
+    int row_start = 0, row_end = r - 1, column_start = 0, column_end = c - 1;
+    while (row_start <= row_end && column_start <= column_end)
     {
-        for (int i = l; i < c; i++)
+        for (int i = column_start; i <= column_end; i++)
         {
-            cout << matrix[k][i] <<" ";
+            cout << matrix[row_start][i] << " ";
         }
-        k++;
-        for (int i = k; i < r; i++)
+        row_start++;
+        for (int i = row_start; i <= row_end; i++)
         {
-            cout << matrix[i][c - 1] <<" ";
+            cout << matrix[i][column_end] << " ";
         }
-        c--;
-        if (k < r)
+        column_end--;
+        for (int i = column_end; i >= column_start; i--)
         {
-            for (int i = c - 1; i >= 0; --i)
-            {
-                cout << matrix[r - 1][i] <<" ";
-            }
-            r--;
+            cout << matrix[row_end][i] << " ";
         }
-        if (l < c)
+        row_end--;
+        for (int i = row_end; i >= row_start; i--)
         {
-            for (int i = r - 1; i >= k; i--)
-            {
-                cout << matrix[i][l] <<" ";
-            }
-            l++;
+            cout << matrix[i][column_start] << " ";
         }
+        column_start++;
     }
-    cout << endl;
+
     return 0;
 }
