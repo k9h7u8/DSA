@@ -15,7 +15,7 @@ int main()
         cin>>array[i];
     }
 
-    int mx = -199999999;
+    int mx = INT_MIN;
     for (int i = 0; i <n ; i++)
     {
         mx = max(mx, array[i]);
