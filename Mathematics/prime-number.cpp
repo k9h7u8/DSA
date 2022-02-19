@@ -1,12 +1,11 @@
 #include <iostream>
 using namespace std;
-
 int main() 
 {
     int n;
     bool isPrime = true;
      
-    cout<<"Enter a number: "<<endl;
+    cout<<"Enter a number: ";
     cin>>n;
 
     if (n==0 || n==1)
@@ -15,7 +14,8 @@ int main()
     }
     else 
     {
-        for (int i = 2; i < n/2; i++)
+        // for (int i = 2; i < n; i++)
+        for (int i = 2; i*i <= n; i++)
         {
             if (n%i == 0)
             {
