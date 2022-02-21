@@ -1,19 +1,19 @@
 #include <iostream>
 using namespace std;
-void prime(int n)
+//Simplest Solution
+bool prime(int n)
 {
-    bool isPrime = true;
     if (n == 0 || n == 1)
     {
-        isPrime = false;
+        return false;
     }
     else if (n == 2 || n == 3)
     {
-        isPrime = true;
+        return true;
     }
     else if (n % 2 == 0 || n % 3 == 0)
     {
-        isPrime = false;
+        return false;
     }
     else
     {
@@ -21,27 +21,26 @@ void prime(int n)
         {
             if (n % i == 0 || n % (i + 2) == 0)
             {
-                isPrime = false;
-                break;
+                return false;
             }
         }
-    }
-
-    if (isPrime)
-    {
-        cout << "Number is prime";
-    }
-    else
-    {
-        cout << "Number is not prime";
+        return true;
     }
 };
-
-int main()
+void sieveEratosthenes(int n){
+    for (int i = 2; i <= n; i++)
+    {
+        if(prime(i))
+        {
+            cout<<i<<" ";
+        }
+    } 
+}
+int main() 
 {
     int n;
     cout << "Enter a number: ";
     cin >> n;
-    prime(n);
+    sieveEratosthenes(n);
     return 0;
 }

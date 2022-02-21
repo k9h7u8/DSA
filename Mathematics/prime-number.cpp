@@ -4,7 +4,6 @@ int main()
 {
     int n;
     bool isPrime = true;
-     
     cout<<"Enter a number: ";
     cin>>n;
 
