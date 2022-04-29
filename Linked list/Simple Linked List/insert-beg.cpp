@@ -11,9 +11,9 @@ struct Node
     }
 };
 
-Node *insertBegin(Node * head, nt x){
+Node *insertBegin(Node * head, int x){
     Node *temp = new Node(x);
-    temp -> next;
+    temp -> next = head;
     return temp;
 };
 
