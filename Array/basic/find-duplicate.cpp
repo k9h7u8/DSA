@@ -21,7 +21,7 @@ int unique(int arr[], int size)
 
     for (int i = 1; i < size; i++)
     {
-        ans = ans ^ arr[i];
+        ans = ans ^ i;
     }
     return ans;
 }
@@ -29,11 +29,11 @@ int unique(int arr[], int size)
 int main()
 {
     int n;
-    cout << "Enter the odd number of elements: ";
+    cout << "Enter the number of elements: ";
     cin >> n;
     int arr[100];
 
-    cout << "Enter the elements of array: ";
+    cout << "Enter the elements of array in between 1 to " << n << ": ";
     getArray(arr, n);
 
     cout << "Dublicate element in an array is: " << unique(arr, n) << endl;
